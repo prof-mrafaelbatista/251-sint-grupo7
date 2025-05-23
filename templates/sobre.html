@@ -1,0 +1,30 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+    <div class="container py-4">
+        <h1>Sobre a equipe</h1>
+        <div class="container mt-5">
+            <div class="row">
+                {% for users in users %}
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ users.avatar_url }}" 
+                                class="card-img-top" 
+                                alt="Foto de {{ users.name | default(users.login, true) }}" 
+                                style="width: 100%; max-width: 400px; aspect-ratio: 1 / 1; object-fit: cover; margin-left: auto; margin-right: auto; display: block;">
+                        <div class="card-body"> 
+                            <h5 class="card-title">{{ users.name }}</h5>
+                            <p class="card-text">{{ users.location }}</p>
+                            <a href={{ users.html_url }} class="btn btn-dark me-2"><i class="fab fa-github"></i> GitHub</a>
+                            {% if users.name == 'Gabriel Gomes Fernandes' %}
+                                <a href="https://br.linkedin.com/in/gabriel-gomes-fernandes" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            {% else %}
+                                <a href="https://br.linkedin.com/in/ssoareslethy" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+    <div class="container py-4">
+        <h1>Tire dúvidas com o Gemini</h1>
+        <form action="{{ url_for('duvidas') }}" method="post">
+            <div class="mb-3">
+                <label for="pergunta" class="form-label">Digite sua dúvida:</label>
+                <input class="form-control" id="pergunta" name="pergunta" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        {% if resposta %}
+            <h2>Resposta:</h2>
+            <p>{{ resposta|safe }}</p>
+            {% endif %}
+    </div>
+{% endblock %}

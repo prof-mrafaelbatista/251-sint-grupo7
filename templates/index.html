@@ -1,0 +1,319 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <h1 class="display-5 fw-bold">Seja bem-vindo ao Python Helper</h1>
+            <p class="col-md-8 fs-4">Seu guia rápido para conceitos fundamentais de programação, pensado para quem está começando em Sistemas para Internet!</p>
+        </header>
+
+        <section id="estruturas-selecao" class="py-3">
+            <h2><i class="fas fa-code-branch me-2"></i>Estruturas de Seleção</h2>
+            <h4 class="mt-3">Conceito</h4>
+            <p>Imagine que seu programa é um GPS. As estruturas de seleção são como as bifurcações na estrada: elas permitem que o programa escolha qual caminho seguir com base em certas condições. Usamos principalmente <code>if</code> (se), <code>elif</code> (senão se) e <code>else</code> (senão). O programa testa se uma condição é verdadeira ou falsa e, dependendo do resultado, executa um bloco de código específico.</p>
+            <h4>Aplicação</h4>
+            <p>São super úteis para:
+                <ul>
+                    <li>Verificar se um usuário digitou a senha correta.</li>
+                    <li>Decidir se um aluno foi aprovado ou reprovado com base na nota.</li>
+                    <li>Mostrar mensagens diferentes dependendo da escolha do usuário em um menu.</li>
+                </ul>
+            </p>
+            <h4 class="mt-3">Exemplo de Código e Explicação</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Código Python</h5>
+                    <pre><code class="language-python">
+# Exemplo 1: Maioridade
+idade = 18
+if idade >= 18:
+    print("Você é maior de idade.")
+else:
+    print("Você é menor de idade.")
+
+# Exemplo 2: Conceito por nota
+nota = 7.5
+if nota >= 9.0:
+    print("Conceito A: Excelente!")
+elif nota >= 7.0:
+    print("Conceito B: Bom trabalho!")
+else:
+    print("Conceito C: Precisa melhorar.")
+                    </code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h5>Explicação Linha a Linha</h5>
+                    <p><strong>Exemplo 1: Maioridade</strong></p>
+                    <dl>
+                        <dt><code>idade = 18</code></dt>
+                        <dd>Criamos uma variável <code>idade</code> e guardamos o número 18 nela.</dd>
+                        <dt><code>if idade >= 18:</code></dt>
+                        <dd><strong>Se</strong> a <code>idade</code> for maior ou igual a 18, execute o próximo bloco.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Você é maior de idade.")</code></dt>
+                        <dd>Mostra esta mensagem se a condição do <code>if</code> for verdadeira. O espaço no início (indentação) é crucial!</dd>
+                        <dt><code>else:</code></dt>
+                        <dd><strong>Senão</strong> (se a condição do <code>if</code> for falsa)...</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Você é menor de idade.")</code></dt>
+                        <dd>Mostra esta mensagem.</dd>
+                    </dl>
+                    <p><strong>Exemplo 2: Conceito por nota</strong></p>
+                    <dl>
+                        <dt><code>nota = 7.5</code></dt>
+                        <dd>Guardamos 7.5 na variável <code>nota</code>.</dd>
+                        <dt><code>if nota >= 9.0:</code></dt>
+                        <dd><strong>Se</strong> a <code>nota</code> for maior ou igual a 9.0...</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Conceito A: Excelente!")</code></dt>
+                        <dd>Mostra "Conceito A".</dd>
+                        <dt><code>elif nota >= 7.0:</code></dt>
+                        <dd><strong>Senão se</strong> (se o <code>if</code> anterior foi falso) a <code>nota</code> for maior ou igual a 7.0...</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Conceito B: Bom trabalho!")</code></dt>
+                        <dd>Mostra "Conceito B".</dd>
+                        <dt><code>else:</code></dt>
+                        <dd><strong>Senão</strong> (se nenhuma das condições anteriores foi verdadeira)...</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Conceito C: Precisa melhorar.")</code></dt>
+                        <dd>Mostra "Conceito C".</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-4">
+
+        <section id="estruturas-repeticao" class="py-3">
+            <h2><i class="fas fa-sync-alt me-2"></i>Estruturas de Repetição</h2>
+            <h4>Conceito</h4>
+            <p>São como dar "replay" em uma parte do seu código. Elas permitem que você execute o mesmo bloco de instruções várias vezes. As principais são o <code>for</code> (para cada item em uma coleção, faça algo) e o <code>while</code> (enquanto uma condição for verdadeira, continue fazendo algo).</p>
+            <h4>Aplicação</h4>
+            <p>Muito usadas para:
+                <ul>
+                    <li>Mostrar todos os nomes de uma lista de contatos.</li>
+                    <li>Calcular a soma de vários números.</li>
+                    <li>Fazer um jogo continuar até que o jogador decida sair ou perca.</li>
+                </ul>
+            </p>
+            <h4 class="mt-3">Exemplo de Código e Explicação</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Código Python</h5>
+                    <pre><code class="language-python">
+# Exemplo com for: Listando frutas
+frutas = ["maçã", "banana", "laranja"]
+for fruta_atual in frutas:
+    print(f"Eu gosto de {fruta_atual}")
+
+# Exemplo com while: Contagem regressiva
+contador = 5
+while contador > 0:
+    print(contador)
+    contador = contador - 1 # ou contador -= 1
+print("Decolar!")
+                    </code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h5>Explicação Linha a Linha</h5>
+                    <p><strong>Exemplo com <code>for</code>: Listando frutas</strong></p>
+                    <dl>
+                        <dt><code>frutas = ["maçã", "banana", "laranja"]</code></dt>
+                        <dd>Criamos uma lista chamada <code>frutas</code>.</dd>
+                        <dt><code>for fruta_atual in frutas:</code></dt>
+                        <dd><strong>Para cada</strong> <code>fruta_atual</code> <strong>na</strong> lista <code>frutas</code>, execute o bloco abaixo. A cada rodada, <code>fruta_atual</code> recebe um item da lista.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print(f"Eu gosto de {fruta_atual}")</code></dt>
+                        <dd>Mostra a mensagem com a fruta da rodada atual.</dd>
+                    </dl>
+                    <p><strong>Exemplo com <code>while</code>: Contagem regressiva</strong></p>
+                    <dl>
+                        <dt><code>contador = 5</code></dt>
+                        <dd>Iniciamos a variável <code>contador</code> com 5.</dd>
+                        <dt><code>while contador > 0:</code></dt>
+                        <dd><strong>Enquanto</strong> o <code>contador</code> for maior que 0, execute o bloco.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print(contador)</code></dt>
+                        <dd>Mostra o valor atual do <code>contador</code>.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;contador = contador - 1</code></dt>
+                        <dd>Diminui o <code>contador</code> em 1. Essencial para o loop terminar!</dd>
+                        <dt><code>print("Decolar!")</code></dt>
+                        <dd>Executado após o loop <code>while</code> terminar.</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-4">
+
+        <section id="vetores-matrizes" class="py-3">
+            <h2><i class="fas fa-th-large me-2"></i>Vetores e Matrizes (Listas em Python)</h2>
+            <h4>Conceito</h4>
+            <p><strong>Vetores</strong> (ou <strong>listas</strong> em Python) são coleções ordenadas de itens, como gavetas numeradas (índices a partir de 0). <strong>Matrizes</strong> são como tabelas, representadas em Python como "listas de listas".</p>
+            <h4>Aplicação</h4>
+            <p>Listas guardam sequências (notas, nomes). Matrizes representam dados tabulares (tabuleiros, planilhas).</p>
+            <h4 class="mt-3">Exemplo de Código e Explicação</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Código Python</h5>
+                    <pre><code class="language-python">
+# Vetor (Lista) de compras
+compras = ["pão", "leite", "ovos"]
+print(compras[0]) # Acessa "pão"
+compras.append("café") # Adiciona "café"
+
+# Matriz (Lista de Listas) - Notas
+# [Prova1, Prova2]
+notas_turma = [
+    [7.5, 8.0],  # Aluno 1
+    [9.0, 8.5]   # Aluno 2
+]
+print(notas_turma[0][1]) # Nota Prova2 Aluno1
+                    </code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h5>Explicação Linha a Linha</h5>
+                    <p><strong>Vetor (Lista) de compras</strong></p>
+                    <dl>
+                        <dt><code>compras = ["pão", "leite", "ovos"]</code></dt>
+                        <dd>Cria uma lista <code>compras</code>.</dd>
+                        <dt><code>print(compras[0])</code></dt>
+                        <dd>Mostra o item no índice 0 (primeiro item: "pão").</dd>
+                        <dt><code>compras.append("café")</code></dt>
+                        <dd>Adiciona "café" ao final da lista <code>compras</code>.</dd>
+                    </dl>
+                    <p><strong>Matriz (Lista de Listas) - Notas</strong></p>
+                    <dl>
+                        <dt><code>notas_turma = [ [7.5, 8.0], [9.0, 8.5] ]</code></dt>
+                        <dd><code>notas_turma</code> é uma lista. Cada item dela é outra lista de notas.</dd>
+                        <dd><code>[7.5, 8.0]</code> são as notas do Aluno 1 (índice 0 da <code>notas_turma</code>).</dd>
+                        <dd><code>[9.0, 8.5]</code> são as notas do Aluno 2 (índice 1 da <code>notas_turma</code>).</dd>
+                        <dt><code>print(notas_turma[0][1])</code></dt>
+                        <dd><code>notas_turma[0]</code> pega a lista do Aluno 1: <code>[7.5, 8.0]</code>.</dd>
+                        <dd>Dessa lista, <code>[1]</code> pega o item no índice 1, que é <code>8.0</code> (Nota da Prova 2 do Aluno 1).</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-4">
+
+        <section id="funcoes-procedimentos" class="py-3">
+            <h2><i class="fas fa-cogs me-2"></i>Funções e Procedimentos</h2>
+            <h4>Conceito</h4>
+            <p>Blocos de código nomeados e reutilizáveis (definidos com <code>def</code>). <strong>Funções</strong> geralmente retornam um valor (<code>return</code>). <strong>Procedimentos</strong> realizam ações sem necessariamente retornar um valor significativo (em Python, retornam <code>None</code> implicitamente).</p>
+            <h4>Aplicação</h4>
+            <p>Organizam, reutilizam e tornam o código mais legível.</p>
+            <h4 class="mt-3">Exemplo de Código e Explicação</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Código Python</h5>
+                    <pre><code class="language-python">
+# Função que retorna um valor
+def somar(a, b):
+    resultado_soma = a + b
+    return resultado_soma
+
+# Procedimento (ação, sem retorno útil)
+def saudar(nome):
+    print(f"Olá, {nome}!")
+
+# Usando a função
+num1 = 5
+soma_final = somar(num1, 3)
+print(f"Soma: {soma_final}")
+
+# Usando o procedimento
+saudar("Ana")
+                    </code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h5>Explicação Linha a Linha</h5>
+                    <p><strong>Função <code>somar</code></strong></p>
+                    <dl>
+                        <dt><code>def somar(a, b):</code></dt>
+                        <dd>Define uma função chamada <code>somar</code> que aceita dois "ingredientes" (parâmetros): <code>a</code> e <code>b</code>.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;resultado_soma = a + b</code></dt>
+                        <dd>Calcula a soma de <code>a</code> e <code>b</code>, guarda em <code>resultado_soma</code>.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;return resultado_soma</code></dt>
+                        <dd>Devolve o valor de <code>resultado_soma</code> para quem chamou a função.</dd>
+                    </dl>
+                    <p><strong>Procedimento <code>saudar</code></strong></p>
+                    <dl>
+                        <dt><code>def saudar(nome):</code></dt>
+                        <dd>Define <code>saudar</code> que aceita um parâmetro <code>nome</code>.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print(f"Olá, {nome}!")</code></dt>
+                        <dd>Mostra uma saudação. Não usa <code>return</code> para devolver um valor específico.</dd>
+                    </dl>
+                    <p><strong>Usando as definições</strong></p>
+                    <dl>
+                        <dt><code>soma_final = somar(num1, 3)</code></dt>
+                        <dd>"Chama" a função <code>somar</code> com <code>num1</code> (que é 5) e 3. O valor retornado (8) é guardado em <code>soma_final</code>.</dd>
+                        <dt><code>print(f"Soma: {soma_final}")</code></dt>
+                        <dd>Mostra o resultado da soma.</dd>
+                        <dt><code>saudar("Ana")</code></dt>
+                        <dd>"Chama" o procedimento <code>saudar</code>, que mostrará "Olá, Ana!".</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-4">
+
+        <!-- Seção: Tratamento de Exceções -->
+        <section id="tratamento-excecoes" class="py-3">
+            <h2><i class="fas fa-exclamation-triangle me-2"></i>Tratamento de Exceções</h2>
+            <h4>Conceito</h4>
+            <p>Mecanismo para lidar com erros que ocorrem durante a execução (exceções), usando <code>try</code> (tentar código), <code>except</code> (capturar erro), <code>else</code> (se não houver erro) e <code>finally</code> (executar sempre).</p>
+            <h4>Aplicação</h4>
+            <p>Cria programas robustos ao lidar com entradas inválidas, falhas de arquivo/rede, etc.</p>
+            <h4 class="mt-3">Exemplo de Código e Explicação</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Código Python</h5>
+                    <pre><code class="language-python">
+try:
+    num_str = input("Digite um número: ")
+    numero = int(num_str)
+    resultado = 10 / numero
+except ValueError:
+    print("Entrada não é um número válido!")
+except ZeroDivisionError:
+    print("Não se pode dividir por zero!")
+except Exception as e:
+    print(f"Outro erro: {e}")
+else:
+    print(f"Resultado: {resultado}")
+finally:
+    print("Tentativa finalizada.")
+                    </code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h5>Explicação Linha a Linha</h5>
+                    <dl>
+                        <dt><code>try:</code></dt>
+                        <dd>Inicia um bloco onde erros podem ser "tentados" e capturados.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;num_str = input(...)</code></dt>
+                        <dd>Pede uma entrada ao usuário (vem como texto).</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;numero = int(num_str)</code></dt>
+                        <dd>Tenta converter o texto para inteiro. Pode dar <code>ValueError</code> se não for um número (ex: "abc").</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;resultado = 10 / numero</code></dt>
+                        <dd>Tenta dividir 10 pelo número. Pode dar <code>ZeroDivisionError</code> se <code>numero</code> for 0.</dd>
+                        <dt><code>except ValueError:</code></dt>
+                        <dd>Se um <code>ValueError</code> ocorreu no bloco <code>try</code>, executa este bloco.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Entrada não é...")</code></dt>
+                        <dd>Mensagem para erro de valor.</dd>
+                        <dt><code>except ZeroDivisionError:</code></dt>
+                        <dd>Se um <code>ZeroDivisionError</code> ocorreu, executa este bloco.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Não se pode...")</code></dt>
+                        <dd>Mensagem para divisão por zero.</dd>
+                        <dt><code>except Exception as e:</code></dt>
+                        <dd>Captura qualquer outro tipo de erro não previsto antes. <code>e</code> contém detalhes do erro.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print(f"Outro erro: {e}")</code></dt>
+                        <dd>Informa sobre o erro genérico.</dd>
+                        <dt><code>else:</code></dt>
+                        <dd>Executado SOMENTE se NENHUM erro ocorreu no bloco <code>try</code>.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print(f"Resultado: {resultado}")</code></dt>
+                        <dd>Mostra o resultado se tudo deu certo.</dd>
+                        <dt><code>finally:</code></dt>
+                        <dd>Executado SEMPRE, com ou sem erro, após o <code>try</code>, <code>except</code>s e <code>else</code>.</dd>
+                        <dt><code>&nbsp;&nbsp;&nbsp;&nbsp;print("Tentativa finalizada.")</code></dt>
+                        <dd>Mensagem final, útil para limpeza.</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

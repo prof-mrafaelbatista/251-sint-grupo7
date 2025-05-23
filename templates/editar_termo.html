@@ -1,0 +1,18 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+    <div class="container py-4">
+        <h1>Editar termo da lista</h1>
+        <form action="{{ url_for('editar_termo', termo_id=termo_id) }}" method="post">
+            <div class="mb-3">
+                <label for="termo" class="form-label">Novo nome para o termo:</label>
+                <input class="form-control" id="termo_alt" name="termo_alt" aria-describedby="emailHelp">
+            <div id="termoHelp" class="form-text">Termo para ser editado.</div>
+            </div>
+            <div class="mb-3">
+                <label for="definicao" class="form-label">Nova definição:</label>
+                <textarea class="form-control" id="definicao_alt" name="definicao_alt" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+{% endblock %}
