@@ -96,7 +96,7 @@ def duvidas():
     
     if request.method == 'POST':
         pergunta = request.form['pergunta']
-        gemini.configure(api_key='AIzaSyDek79FsvKhxwGm2UleUfwGeNlX3d56xgE')
+        gemini.configure(api_key='')
         model = gemini.GenerativeModel('gemini-2.0-flash')
         response = model.generate_content(pergunta)
         resposta = markdown.markdown(response.text)
